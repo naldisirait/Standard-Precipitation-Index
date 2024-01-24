@@ -1,0 +1,11 @@
+{
+    "experiment_name": "test3",
+    "skala_spi": [3,6],
+    "path_dataset": "C:/Users/62812/Documents/Kerjaan Meteorologi/Data/pr_CESM2-WACCM_ssp245.nc",
+    "data_coord_order": "latlon",
+    "path_shp": "..",
+    "Percentage of Occurance": {"moderate" : [9, 10, 11],
+                                "severe" : [3.5, 4.5, 5.5],
+                                "very severe" : [1.5, 2, 2.5]},
+    "experiment_result_path": "C:/Users/62812/Documents/Kerjaan Meteorologi/SPI/Standard-Precipitation-Index/experiment results"
+}
