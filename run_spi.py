@@ -17,7 +17,7 @@ def run_experiment():
     data = load_dataset(config_class.get_path_dataset())
     
     #creata a class dataset
-    xr_data = XarrayDataset(data)
+    xr_data = XarrayDataset(dataset = data,config = config)
 
     #get monthly_precipitation and its date
     monthly_precip = xr_data.get_monthly_prec().values

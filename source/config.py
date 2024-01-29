@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-
 class Configuration:
     def __init__(self, config):
         self.config = config

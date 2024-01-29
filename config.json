@@ -1,6 +1,11 @@
 {
-    "experiment_name": "test3",
+    "experiment_name": "test 10",
+    "data": "Model",
     "skala_spi": [3,6],
+    "latitude variable": "lat",
+    "longitude variable": "lon",
+    "precipitation variable": "pr",
+    "time variable": "time",
     "path_dataset": "C:/Users/62812/Documents/Kerjaan Meteorologi/Data/pr_CESM2-WACCM_ssp245.nc",
     "data_coord_order": "latlon",
     "path_shp": "..",
