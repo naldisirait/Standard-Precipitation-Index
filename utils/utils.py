@@ -44,7 +44,6 @@ def make_nc3D_latlon(data,time,lon,lat,variable,output_name):
         "latitude": lat,
         "longitude": lon,
         })
-    print("BERHASILLLLLLLLL")
     dxr.to_netcdf("{}.nc".format(output_name))
 
 def create_folder(path:str, folder_name: str):
