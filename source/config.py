@@ -3,6 +3,7 @@ import pandas as pd
 class Configuration:
     def __init__(self, config):
         self.config = config
+        
     def get_start_date(self):
         return self.config['data_start_date']
     

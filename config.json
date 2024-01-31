@@ -1,7 +1,7 @@
 {
-    "experiment_name": "test 10",
+    "experiment_name": "Run di lab bawah 2",
     "data": "Model",
-    "skala_spi": [3,6],
+    "skala_spi": [3,6,9],
     "latitude variable": "lat",
     "longitude variable": "lon",
     "precipitation variable": "pr",

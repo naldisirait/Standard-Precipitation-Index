@@ -25,7 +25,7 @@ class XarrayDataset:
 
     def get_monthly_prec(self):
         # Resample daily precipitation to monthly
-        monthly_precip = self.dataset['pr'].resample(time='1ME').sum(dim='time')
+        monthly_precip = self.dataset['pr'].resample(time='1M').sum(dim='time')
         return monthly_precip
         
 def process_dataset(dataset):

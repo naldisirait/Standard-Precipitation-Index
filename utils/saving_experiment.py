@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 from .utils import make_nc2d_latlon, make_nc2d_lonlat, make_nc3D_latlon, make_nc3D_lonlat, create_folder
+from utils.visualization import plot_map
 
 def save_experiment(config_class, spi_scale, xr_data, spi_result, dhi, percentage_occurance):
     path_result = config_class.get_experiment_path_result()
@@ -10,6 +11,7 @@ def save_experiment(config_class, spi_scale, xr_data, spi_result, dhi, percentag
     longitude = xr_data.get_lon()
     exp_name = config_class.get_experiment_name()
     data_coor_order = config_class.get_coordinat_order()
+    shapefile = config_class.get_path_shp()
 
     if data_coor_order =="lonlat":
         make_nc2d = make_nc2d_lonlat
@@ -21,6 +23,7 @@ def save_experiment(config_class, spi_scale, xr_data, spi_result, dhi, percentag
     create_folder(path_result,exp_name)
 
     for sc in spi_scale:
+        path_exp = f"{path_result}/{exp_name}"
         sc = str(sc)
 
         #save spi results
@@ -29,11 +32,12 @@ def save_experiment(config_class, spi_scale, xr_data, spi_result, dhi, percentag
                          output_name = f"{path_result}/{exp_name}/SPI {sc}")
 
         #save dhi results
+        output_filename = f"{path_result}/{exp_name}/DHI SPI {sc}"
         make_nc2d_latlon(data = dhi[sc], 
                   lon = longitude,
                   lat = latitude,
                   variable= "dhi", 
-                  output_name= f"{path_result}/{exp_name}/DHI SPI {sc}")
+                  output_name= output_filename)
         
         #save probability results
         make_nc2d_latlon(data = percentage_occurance[sc]["moderate"],
@@ -53,3 +57,4 @@ def save_experiment(config_class, spi_scale, xr_data, spi_result, dhi, percentag
                   lat = latitude,
                   variable="prob",
                   output_name=f"{path_result}/{exp_name}/Probability SPI {sc} VSD")
+        
